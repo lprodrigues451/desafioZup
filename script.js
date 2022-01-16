@@ -12,7 +12,7 @@ const condicao1 = document.querySelector('#vivoOuMorto1');
 const condicao2 = document.querySelector('#vivoOuMorto2');
 const condicao3 = document.querySelector('#vivoOuMorto3');
 
-traduzirCondicao1 = (data) => {
+traduzirCondicao = (data) => {
     if(data.status == 'unknown'){
         return 'Não sabemos';
     }else if(data.status == 'Alive'){
@@ -26,7 +26,14 @@ gerarValorAletorio = () => {
     return Math.floor(Math.random() * 671);
 }
 
-pegarPersonagem = () => {
+pegarOsPersonagens = () => {
+    pegarPersonagem(imagem1,nomeDoPersonagem1, especie1, condicao1);
+    pegarPersonagem(imagem2,nomeDoPersonagem2, especie2, condicao2);
+    pegarPersonagem(imagem3,nomeDoPersonagem3, especie3, condicao3);
+
+}
+
+pegarPersonagem = (imagem, nomeDoPersonagem, especie, condicao) => {
     let numeroAleatorio = gerarValorAletorio();
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
         method:'GET',
@@ -35,13 +42,13 @@ pegarPersonagem = () => {
             "Content-type": 'application/json'
         }
     }).then((response) => response.json()).then((data) => {
-        imagem1.src = data.image;
-        imagem1.alt = data.name;
-        nomeDoPersonagem1.innerHTML = data.name;
-        especie1.innerHTML = data.species;
-        condicao1.innerHTML = traduzirCondicao1(data);
+        imagem.src = data.image;
+        imagem.alt = data.name;
+        nomeDoPersonagem.innerHTML = data.name;
+        especie.innerHTML = data.species;
+        condicao.innerHTML = traduzirCondicao(data);
     });
 }
 
 
-botao.onclick = pegarPersonagem;
+botao.onclick = pegarOsPersonagens;
