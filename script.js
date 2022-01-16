@@ -1,10 +1,10 @@
 const imagem = document.querySelector('#rick');
 const botao = document.querySelector('button');
 const nomeDoPersonagem = document.querySelector('#nome');
-const especie = document.querySelector('#especie');
-const condicao = document.querySelector('#vivoOuMorto');
+const especie1 = document.querySelector('#especie1');
+const condicao1 = document.querySelector('#vivoOuMorto1');
 
-traduzirCondicao = (data) => {
+traduzirCondicao1 = (data) => {
     if(data.status == 'unknown'){
         return 'Não sabemos';
     }else if(data.status == 'Alive'){
@@ -30,8 +30,8 @@ pegarPersonagem = () => {
         imagem.src = data.image;
         imagem.alt = data.name;
         nomeDoPersonagem.innerHTML = data.name;
-        especie.innerHTML = data.species;
-        condicao.innerHTML = traduzirCondicao(data);
+        especie1.innerHTML = data.species;
+        condicao1.innerHTML = traduzirCondicao1(data);
     });
 }
 
