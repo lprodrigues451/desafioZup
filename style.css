@@ -11,6 +11,12 @@ body {
     width: 100%;
 }
 
+img {
+    height: 300px;
+    margin: 15px 0;
+    width: 300px;
+}
+
 main{
     align-items: center;
     display: flex;
@@ -19,23 +25,12 @@ main{
     position: relative;
 }
 
-#coluna {
-    float: left;
-    width: 33.33%;
-
-}
-
-img {
-    height: 300px;
-    margin: 15px 0;
-    width: 300px;
-}
-
 main > section button {
-
+    
     background-color: #D2DFEC;
     border-radius: 4;
     color: black;
+    cursor: pointer;
     font-family: EuclidBold;
     font-size: 18px;
     font-weight: 500;
@@ -45,9 +40,18 @@ main > section button {
     text-transform: uppercase;
 }
 
+
+#coluna {
+    float: left;
+    width: 33.33%;
+
+}
+
+
 #detalhes-container > li {
     align-items: baseline;
     display: flex;
+    
 }
 
 #detalhes-container > li p {
