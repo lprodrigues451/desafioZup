@@ -28,7 +28,7 @@ main{
 main > section button {
     
     background-color: #D2DFEC;
-    border-radius: 4;
+    border-radius: 5;
     color: black;
     cursor: pointer;
     font-family: EuclidBold;
@@ -40,23 +40,20 @@ main > section button {
     text-transform: uppercase;
 }
 
+#botao {
+    text-align: center;
+    }
 
 #coluna {
     float: left;
     width: 33.33%;
-
 }
-
 
 #detalhes-container > li {
     align-items: baseline;
-    display: flex;
-    
+    display: flex;   
 }
 
 #detalhes-container > li p {
     color: white;
-}
-#botao {
-text-align: center;
 }
